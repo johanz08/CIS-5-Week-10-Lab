@@ -1,16 +1,27 @@
-#include <iostream>
+// Johan Zuniga
+// Lab 10 - Mutate via Reference
 
-// Lab 10 — Your Name
-// CIS 5 Week 10 · References & pointers
+#include <iostream>
+using namespace std;
 
 void swap_values(int& a, int& b) {
-  // TODO
+    int temp = a;
+    a = b;
+    b = temp;
 }
 
 int main() {
-  int x = 3, y = 7;
-  std::cout << "Before: " << x << " " << y << "\n";
-  // TODO: swap_values(x, y);
-  // TODO: pointer walkthrough with int* p = &x;
-  return 0;
+    int x = 3;
+    int y = 7;
+
+    cout << "Before: " << x << " " << y << endl;
+
+    swap_values(x, y);
+
+    cout << "After: " << x << " " << y << endl;
+
+    int* p = &x;
+    cout << "x via pointer: " << *p << endl;
+
+    return 0;
 }
